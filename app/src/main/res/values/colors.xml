@@ -4,10 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-
-    <color name="myPrimaryColor">#F59927</color>
-    <color name="myPrimaryDarkColor">#ffcd8221</color>
-    <color name="myAccentColor">#000000</color>
     <color name="myDrawerBackground">#F2F2F2</color>
     <color name="myWindowBackground">#DEDEDE</color>
     <color name="myTextPrimaryColor">#000000</color>

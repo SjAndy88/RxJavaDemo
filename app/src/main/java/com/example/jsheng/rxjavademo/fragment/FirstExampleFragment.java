@@ -165,7 +165,7 @@ public class FirstExampleFragment extends Fragment {
                     Bitmap icon = Utils.drawableToBitmap(app.getIcon());
                     String name = app.getName();
                     String iconPath = mFilesDir + "/" + name;
-                    Utils.storeBitmap(App.instance, icon, iconPath);
+                    Utils.storeBitmap(App.instance, icon, name);
 
                     if (subscriber.isUnsubscribed()) {
                         return;
