@@ -47,7 +47,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
 
     private boolean mFromSavedInstanceState;
 
-    private int mCurrentSelectedPostion;
+    private int mCurrentSelectedPosition;
 
     private static SPUtils spUtils;
 
@@ -71,7 +71,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         super.onCreate(savedInstanceState);
         mUserLearnedDrawer = Boolean.valueOf(readShareSetting(getActivity(), PREF_USER_LEARNED_DRAWER, "false"));
         if (savedInstanceState != null) {
-            mCurrentSelectedPostion = savedInstanceState.getInt(STATE_SELECTED_POSITION);
+            mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
         }
     }
@@ -160,7 +160,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         NavigationDrawerAdapter adapter = new NavigationDrawerAdapter(navigationItems);
         adapter.setNavigationDrawerCallbacks(this);
         mDrawerList.setAdapter(adapter);
-        selectItem(mCurrentSelectedPostion);
+        selectItem(mCurrentSelectedPosition);
         return view;
     }
 
@@ -181,7 +181,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     }
 
     private void selectItem(int position) {
-        mCurrentSelectedPostion = position;
+        mCurrentSelectedPosition = position;
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
         }
@@ -201,6 +201,6 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(STATE_SELECTED_POSITION, mCurrentSelectedPostion);
+        outState.putInt(STATE_SELECTED_POSITION, mCurrentSelectedPosition);
     }
 }
