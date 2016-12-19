@@ -52,7 +52,7 @@ public class FirstExampleFragment extends Fragment {
     @BindView(R.id.fragment_first_example_swipe_container)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
-    private ApplicationAdapter mAdatper;
+    private ApplicationAdapter mAdapter;
 
     private File mFilesDir;
 
@@ -73,8 +73,8 @@ public class FirstExampleFragment extends Fragment {
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        mAdatper = new ApplicationAdapter(new ArrayList<AppInfo>(), R.layout.applications_list_item);
-        mRecyclerView.setAdapter(mAdatper);
+        mAdapter = new ApplicationAdapter(new ArrayList<AppInfo>(), R.layout.applications_list_item);
+        mRecyclerView.setAdapter(mAdapter);
 
         mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
         mSwipeRefreshLayout.setProgressViewOffset(false, 0,
@@ -126,7 +126,7 @@ public class FirstExampleFragment extends Fragment {
                     @Override
                     public void onNext(List<AppInfo> appInfos) {
                         mRecyclerView.setVisibility(View.VISIBLE);
-                        mAdatper.addApplications(appInfos);
+                        mAdapter.addApplications(appInfos);
                         mSwipeRefreshLayout.setRefreshing(false);
                         storeList(appInfos);
                     }
